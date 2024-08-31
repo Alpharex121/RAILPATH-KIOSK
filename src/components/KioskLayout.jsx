@@ -19,6 +19,7 @@ import luggageqr from "../assets/qr/luggage_room_qr.jpg";
 import waitingqr from "../assets/qr/waiting_qr.jpg";
 import wheelqr from "../assets/qr/wheelchair_qr.jpg";
 import cafeteriaqr from "../assets/qr/cafeteria_qr.jpg";
+import Carousel from "./Carousel";
 
 function KioskLayout() {
   var showMap;
@@ -58,18 +59,14 @@ function KioskLayout() {
           {/* Sponsor Block */}
           <div className="flex flex-col items-end space-y-4  h-[30%] ">
             <div
-              className="w-2/3 h-full flex justify-center items-center bg-[#6DA7BE] cursor-pointer rounded-xl mr-10"
+              className="w-2/3 h-full flex justify-center items-center bg-[#D1D2D4] cursor-pointer rounded-xl mr-10"
               onClick={() => {
                 setCurrentSection("SponsorSection");
                 setIsSelected("none");
               }}
             >
-              <div className=" w-2/3 h-8 flex items-center justify-center rounded-md">
-                <img
-                  src={sponsor_icon}
-                  alt="Sponsor Block"
-                  className="relative rounded-lg"
-                />
+              <div className=" flex items-center justify-center rounded-md h-full w-full">
+                <Carousel />
               </div>
             </div>
           </div>
@@ -77,14 +74,14 @@ function KioskLayout() {
           {/* PNR Search */}
           <div className="flex flex-col items-end mt-8  h-[30%]   ">
             <div
-              className="w-2/3 h-full flex justify-center items-center bg-[#9BC4D4] cursor-pointer rounded-xl mr-10"
+              className="w-2/3 h-full flex justify-center items-center bg-[#D1D2D4] cursor-pointer rounded-xl mr-10"
               onClick={() => {
                 setCurrentSection("TrainandpnrSection");
                 setIsSelected("none");
               }}
             >
-              <div className=" w-2/3 h-8 flex items-center justify-center rounded-md">
-                <img src={pnr_enquiry} alt="PNR Search" />
+              <div className=" w-2/3 flex items-center  h-2/3  p-2 justify-center ">
+                <img src={pnr_enquiry} alt="PNR Search" className="w-[70%]" />
               </div>
             </div>
           </div>
@@ -94,7 +91,7 @@ function KioskLayout() {
             <div className="w-2/3 h-full flex justify-center items-center bg-[#D1D2D4] cursor-pointer rounded-xl mr-10">
               <div className="w-2/3 h-8 flex items-center justify-center rounded-md">
                 {console.log(currentQR)}
-                <img src={currentQR} alt="QR" />
+                <img src={currentQR} alt="QR" className="rounded-xl" />
               </div>
             </div>
           </div>
