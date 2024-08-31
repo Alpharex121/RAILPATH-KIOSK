@@ -24,6 +24,7 @@ function KioskLayout() {
   var showMap;
   const [menuName, setMenuName] = useState("JABALPUR STATION");
   const [currenSection, setCurrentSection] = useState("NavigationSection");
+
   const [mapName, setMapName] = useState("homemap");
   const [isSelected, setIsSelected] = useState("home");
   const [currentQR, setCurrentQR] = useState("homeqr");

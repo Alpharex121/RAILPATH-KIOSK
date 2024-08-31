@@ -8,10 +8,18 @@ import luggagemap from "../assets/luggage_map.jpg";
 import waitmap from "../assets/waiting_map.jpg";
 import ticketmap from "../assets/ticket_map.jpg";
 import DirectionModal from "./DirectionModal";
+import crossIcon from "../assets/accessibility/cross.png";
+import darkmode from "../assets/accessibility/darkmode.png";
+import hideimage from "../assets/accessibility/hideimage.png";
+import invertcolors from "../assets/accessibility/invertcolors.png";
+import largetext from "../assets/accessibility/largetext.png";
+import textspacing from "../assets/accessibility/text spacing.png";
+import accessibility from "../assets/accessibility/text spacing.png";
 
 const NavigationoSeaction = ({ sectionName, mapname }) => {
   var currMapName;
   const [showDirection, setShowDirection] = useState(false);
+  const [isAccessibilityExpanded, setIsAccessibilityExpanded] = useState(false);
   if (mapname === "homemap") mapname = homemap;
   else if (mapname === "cafeteriamap") mapname = cafeteriamap;
   else if (mapname === "ticketmap") mapname = ticketmap;
@@ -74,13 +82,62 @@ const NavigationoSeaction = ({ sectionName, mapname }) => {
           </button>
         </div>
 
-        <div className="bg-gray-300 w-[90%] mx-auto h-[84%] border-2 border-black rounded-xl ">
+        <div className="bg-gray-300 w-[90%] mx-auto h-[75%] border-2 border-black rounded-xl ">
           {/* Map Placeholder */}
           <img
             src={mapname}
             alt=""
             className=" object-fill rounded-xl h-full w-[100%] "
           />
+        </div>
+        <div className="relative flex flex-col items-center overflow-hidden  mb-3 mt-4">
+          {/* Main Accessibility Button */}
+          <div
+            className={`transition-transform duration-500 ${
+              isAccessibilityExpanded ? "translate-x-[-550px]" : ""
+            }`}
+          >
+            <button
+              className="bg-[#2f5487] p-4 rounded-full text-white text-xl font-bold"
+              onClick={() =>
+                setIsAccessibilityExpanded(!isAccessibilityExpanded)
+              }
+            >
+              Accessibility
+            </button>
+          </div>
+
+          {/* Accessibility Options */}
+          <div
+            className={`absolute bottom-0 transition-transform duration-500 ${
+              isAccessibilityExpanded ? "translate-x-0" : "translate-x-[100vw]"
+            } flex  w-full justify-center space-x-4 mt-2`}
+          >
+            <button className="bg-white   w-[6%] rounded-full border border-black flex justify-center items-center">
+              <img src={darkmode} alt="" className="w-[70%] h-[70%]" />
+            </button>
+            <button className="bg-white   w-[6%] rounded-full border border-black flex justify-center items-center">
+              <img src={hideimage} alt="" className="w-[70%] h-[70%]" />
+            </button>
+            <button className="bg-white   w-[6%] rounded-full border border-black flex justify-center items-center">
+              <img src={invertcolors} alt="" className="w-[70%] h-[70%]" />
+            </button>
+            <button className="bg-white   w-[6%] rounded-full border border-black flex justify-center items-center">
+              <img src={largetext} alt="" className="w-[60%] h-[60%]" />
+            </button>
+            <button className="bg-white   w-[6%] rounded-full border border-black flex justify-center items-center">
+              <img src={textspacing} alt="" className="w-[70%] h-[70%]" />
+            </button>
+
+            <button
+              className="bg-white   w-[6%] rounded-full"
+              onClick={() =>
+                setIsAccessibilityExpanded(!isAccessibilityExpanded)
+              }
+            >
+              <img src={crossIcon} alt="" className="w-full h-full" />
+            </button>
+          </div>
         </div>
       </div>
     </div>
