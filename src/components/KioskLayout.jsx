@@ -48,7 +48,7 @@ function KioskLayout() {
       {/* Header */}
       <div className="bg-white h-[10vh] text-black text-center  my-auto ">
         <h1 className="text-[5vh] font-bold  text-[#0C0F47] font-ubuntu">
-          DIGITAL KIOSK
+          Railपथ DIGITAL KIOSK
         </h1>
       </div>
 
